@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publiez et consultez les actualités de la communauté Harmonia.">
+    <title>Publications - HARMONIA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <a class="brand" href="accueille.html">
+                <span class="brand-mark"><img src="1.jpg" alt=""></span>
+                <span>HARMONIA</span>
+            </a>
+            <nav aria-label="Navigation principale">
+                <a href="accueille.html">Accueil</a>
+                <a href="a%20propose.html">À propos</a>
+                <a href="web.html" aria-current="page">Publications</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <main class="posts-page">
+            <div class="eyebrow">Espace Harmonia</div>
+            <h1 class="posts-heading">Publications</h1>
+            <p class="lead">Partagez une actualité, une réflexion ou une ressource avec la communauté.</p>
+
+            <form class="post-composer" id="postForm">
+                <label for="postTitle">
+                    Titre
+                    <input id="postTitle" name="title" type="text" maxlength="120" required>
+                </label>
+                <label for="postAuthor">
+                    Nom (facultatif)
+                    <input id="postAuthor" name="author" type="text" maxlength="80">
+                </label>
+                <label for="postContent">
+                    Votre publication
+                    <textarea id="postContent" name="content" maxlength="5000" required></textarea>
+                </label>
+                <button class="primary-btn post-submit" type="submit">Publier</button>
+                <p class="post-status" id="postStatus" role="status" aria-live="polite"></p>
+            </form>
+
+            <section class="post-list" id="postList" aria-label="Publications partagées">
+                <p class="empty-posts" id="emptyPosts">Aucune publication pour le moment. Soyez le premier à partager.</p>
+            </section>
+        </main>
+        <footer>Harmonia • Apaisement & médiation familiale</footer>
+    </div>
+
+    <script>
+        const storageKey = 'harmoniaPosts';
+        const postForm = document.getElementById('postForm');
+        const postList = document.getElementById('postList');
+        const postStatus = document.getElementById('postStatus');
+        const emptyPosts = document.getElementById('emptyPosts');
+        let posts = [];
+
+        function showStatus(message) {
+            postStatus.textContent = message;
+        }
+
+        function renderPosts() {
+            postList.querySelectorAll('.post-card').forEach(post => post.remove());
+            emptyPosts.hidden = posts.length > 0;
+
+            posts.forEach(post => {
+                const article = document.createElement('article');
+                article.className = 'post-card';
+
+                const title = document.createElement('h3');
+                title.textContent = post.title;
+
+                const meta = document.createElement('p');
+                meta.className = 'post-meta';
+                const date = new Date(post.createdAt);
+                meta.textContent = `${post.author || 'Anonyme'} · ${date.toLocaleString('fr-FR')}`;
+
+                const content = document.createElement('p');
+                content.className = 'post-body';
+                content.textContent = post.content;
+
+                article.append(title, meta, content);
+                postList.append(article);
+            });
+        }
+
+        try {
+            const savedPosts = localStorage.getItem(storageKey);
+            if (savedPosts !== null) {
+                const parsedPosts = JSON.parse(savedPosts);
+                if (!Array.isArray(parsedPosts)) {
+                    throw new Error('Les publications enregistrées ont un format invalide.');
+                }
+                posts = parsedPosts;
+            }
+            renderPosts();
+        } catch (error) {
+            showStatus('Impossible de charger les publications enregistrées dans ce navigateur.');
+            console.error('Unable to load Harmonia posts:', error);
+        }
+
+        postForm.addEventListener('submit', event => {
+            event.preventDefault();
+            const formData = new FormData(postForm);
+            const newPost = {
+                title: formData.get('title').trim(),
+                author: formData.get('author').trim(),
+                content: formData.get('content').trim(),
+                createdAt: new Date().toISOString()
+            };
+
+            if (!newPost.title || !newPost.content) {
+                showStatus('Veuillez ajouter un titre et le contenu de votre publication.');
+                return;
+            }
+
+            const updatedPosts = [newPost, ...posts];
+            try {
+                localStorage.setItem(storageKey, JSON.stringify(updatedPosts));
+            } catch (error) {
+                showStatus('La publication n’a pas pu être enregistrée dans ce navigateur.');
+                console.error('Unable to save Harmonia post:', error);
+                return;
+            }
+
+            posts = updatedPosts;
+            renderPosts();
+            postForm.reset();
+            showStatus('Votre publication a été ajoutée.');
+        });
+    </script>
+</body>
+</html>
