@@ -1,11 +1,109 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
+
 <head>
-    <title>hover experiment</title>
-    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmonia - Sign In</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ionicons for Social Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
+
 <body>
-    <button class="btn">Hover me!</button>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">HARMONIA</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html" data-en="HOME" data-fr="ACCUEIL">HOME</a></li>
+                    <li><a href="a propose.html" data-en="ABOUT" data-fr="À PROPOS">ABOUT</a></li>
+                    <li><a href="contact.html" data-en="CONTACT" data-fr="CONTACT">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To Text" data-placeholder-en="Type To Text" data-placeholder-fr="Taper ici">
+                <a href="#"><button class="btn" data-en="Search" data-fr="Rechercher">Search</button></a>
+            </div>
+
+            <!-- Language Switch Button -->
+            <div class="lang-switch">
+                <button id="langBtn" onclick="toggleLanguage()">FR</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1 data-en-html="Apaisement & <br>&lt;span&gt;Médiation&lt;/span&gt; <br>familiale" data-fr-html="Apaisement & <br>&lt;span&gt;Médiation&lt;/span&gt; <br>familiale">
+                Apaisement & <br><span>Médiation</span> <br>familiale
+            </h1>
+            <p class="par" data-en="Welcome to Harmonia. We provide peaceful family and matrimonial mediation services to help bring balance, harmony, and understanding to your relationships." data-fr="Bienvenue chez Harmonia. Nous proposons des services d'apaisement et de médiation familiale et matrimoniale pour vous aider à retrouver équilibre, harmonie et compréhension dans vos relations.">
+                Welcome to Harmonia. We provide peaceful family and matrimonial mediation services to help bring balance, harmony, and understanding to your relationships.
+            </p>
+
+            <button class="cn"><a href="a propose.html" data-en="JOIN US" data-fr="REJOIGNEZ-NOUS">JOIN US</a></button>
+
+            <!-- Login Box -->
+            <div class="form">
+                <h2 data-en="Login Here" data-fr="Connexion">Login Here</h2>
+                <input type="email" name="email" placeholder="Enter Email Here" data-placeholder-en="Enter Email Here" data-placeholder-fr="Entrez l'e-mail ici">
+                <input type="password" name="" placeholder="Enter Password Here" data-placeholder-en="Enter Password Here" data-placeholder-fr="Entrez le mot de passe">
+                <button class="btnn"><a href="#" data-en="Login" data-fr="Se connecter">Login</a></button>
+
+                <p class="link"><span data-en="Don't have an account?" data-fr="Vous n'avez pas de compte ?">Don't have an account?</span><br>
+                    <a href="#" data-en="Sign up here" data-fr="Inscrivez-vous ici">Sign up here</a></p>
+
+                <p class="liw" data-en="Log in with" data-fr="Se connecter avec">Log in with</p>
+                <div class="icons">
+                    <a href="#">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                    <a href="#">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="#">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                    <a href="#">
+                        <ion-icon name="logo-google"></ion-icon>
+                    </a>
+                    <a href="#">
+                        <ion-icon name="logo-skype"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Translation Script -->
+    <script>
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+            document.getElementById('langBtn').innerText = currentLang === 'en' ? 'FR' : 'EN';
+
+            // Translate elements with data-en and data-fr
+            document.querySelectorAll('[data-en]').forEach(element => {
+                element.innerText = element.getAttribute(`data-${currentLang}`);
+            });
+
+            // Translate elements with HTML markup
+            document.querySelectorAll('[data-en-html]').forEach(element => {
+                element.innerHTML = element.getAttribute(`data-${currentLang}-html`);
+            });
+
+            // Translate placeholders
+            document.querySelectorAll('[data-placeholder-en]').forEach(element => {
+                element.placeholder = element.getAttribute(`data-placeholder-${currentLang}`);
+            });
+        }
+    </script>
 </body>
 
 </html>

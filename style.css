@@ -12,6 +12,8 @@ body {
 .main {
     width: 100%;
     height: 100vh;
+    /* Contains the floated navbar so the heading's top margin can't push the whole section down */
+    display: flow-root;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url('1.jpg');
     background-position: center;
     background-size: cover;
@@ -27,6 +29,7 @@ body {
     width:auto;
     float:left;
     height: 70px;
+}
 
 .icon {
     width: 200px;
