@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="fr">
 <head>
@@ -59,3 +60,150 @@
   </div></div></div><div class="container footer-bottom"><span>© <span data-year>2026</span> Harmonia. Tous droits réservés.</span><span>Agir avec respect. Construire avec espoir.</span></div></footer>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="mediation et Apaisement">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document | Andy's  PC's</title>
+    <link rel="stylesheet" href="web.css">
+    <link rel="icon" href="./1.jpg">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+   
+   <div class="header">
+    <!--header-->
+     <h1> HARMONIA </h1>
+    <div class="navbar">
+        <ul>
+
+                    <li><a href="index.html" data-en="HOME" data-fr="ACCUEIL">HOME</a></li>                    
+                    <li><a href="a propose.html" data-en="ABOUT" data-fr="À PROPOS">ABOUT</a></li>
+                    <li><a href="contact.html" data-en="CONTACT" data-fr="CONTACT">CONTACT</a></li>
+                    <li><a href="content.html" data-en="CONTENT" data-fr="CONTENU">CONTENT</a></li>
+                
+        </ul>
+    </div>
+     <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To Text" data-placeholder-en="Type To Text" data-placeholder-fr="Taper ici">
+                <a href="#"><button class="btn" data-en="Search" data-fr="Rechercher">Search</button></a>
+            </div>
+
+            <!-- Language Switch Button -->
+            <div class="lang-switch">
+                <button id="langBtn" onclick="toggleLanguage()">FR</button>
+            </div>
+            <div class="lang-switch">
+                <button id="langBtn" onclick="toggleLanguage()">EN</button>
+            </div>
+   </div>
+    <div class="main">
+
+        <div class="contianer">
+            <div class="content">
+              <h1 data-en-html="Apaisement & <br>&lt;span&gt;Médiation&lt;/span&gt; <br>familiale" data-fr-html="Apaisement & <br>&lt;span&gt;Médiation&lt;/span&gt; <br>familiale">
+                Apaisement & <br><span>Médiation</span> <br>familiale
+              </h1>
+              <p class="par" data-en="Welcome to Harmonia. We provide peaceful family and matrimonial mediation services to help bring balance, harmony, and understanding to your relationships." data-fr="Bienvenue chez Harmonia. Nous proposons des services d'apaisement et de médiation familiale et matrimoniale pour vous aider à retrouver équilibre, harmonie et compréhension dans vos relations.">
+                Welcome to Harmonia. We provide peaceful family and matrimonial mediation services to help bring balance, harmony, and understanding to your relationships.
+              </p>
+
+               <button class="btn"><a href="a propose.html" data-en="JOIN US" data-fr="REJOIGNEZ-NOUS">JOIN US</a></button>
+                  <div>
+                  <div class="sidebar">
+  <!-- Sidebar Layout -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-title">navigateur</span>
+      
+      <!-- Window Controls -->
+      <div class="window-controls">
+        <button class="btn" title="Minimize" onclick="minimizeSidebar()"></button>
+        <button class="btn" title="Maximize" onclick="maximizeSidebar()"></button>
+        <button class="btn" title="Close" onclick="closeSidebar()"></button>
+      </div>
+    </div>
+
+    <!-- Navigation Menu Items -->
+    <ul class="sidebar-menu">
+      <li class="menu-item"><a href="#home">Home</a></li>
+      <li class="menu-item"><a href="#analytics">Analytics</a></li>
+      <li class="menu-item"><a href="#settings">Settings</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main View Area -->
+  <main class="main-content">
+    Main Application Window
+  </main>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+
+    function minimizeSidebar() {
+      sidebar.style.width = '60px';
+      // Optional: Hide text labels or change icon size here
+    }
+
+    function maximizeSidebar() {
+      sidebar.style.width = '320px'; // Expanded state
+    }
+
+    function closeSidebar() {
+      sidebar.style.display = 'none';
+    }
+  </script>
+                    
+                  </div>
+
+             </div>
+
+        </div>
+
+
+        <div class="footer">
+            <!--footer-->
+
+             <div class="navbar">
+            coming soon    
+             </div>
+             <div class="address">
+                
+                </div>
+             </div>
+
+        </div>
+
+    </div>
+
+   <!--lang script-->
+    <script>
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+            document.getElementById('langBtn').innerText = currentLang === 'en' ? 'FR' : 'EN';
+
+            // Translate elements with data-en and data-fr
+            document.querySelectorAll('[data-en]').forEach(element => {
+                element.innerText = element.getAttribute(`data-${currentLang}`);
+            });
+
+            // Translate elements with HTML markup
+            document.querySelectorAll('[data-en-html]').forEach(element => {
+                element.innerHTML = element.getAttribute(`data-${currentLang}-html`);
+            });
+
+            // Translate placeholders
+            document.querySelectorAll('[data-placeholder-en]').forEach(element => {
+                element.placeholder = element.getAttribute(`data-placeholder-${currentLang}`);
+            });
+        }
+    </script>
+</body>
+</html>
+>>>>>>> c704329dd2fd5f30a9733bed8e4e0a951c9595b2

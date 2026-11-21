@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="fr">
 <head>
@@ -51,5 +52,535 @@
     <a href="https://www.tiktok.com/@harmonai" target="_blank" rel="noopener noreferrer" aria-label="Harmonia sur TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 8.3a7.2 7.2 0 0 1-4.5-1.6v7.1a6.1 6.1 0 1 1-5.3-6.1v3.7a2.5 2.5 0 1 0 1.7 2.4V2.8h3.6a7.2 7.2 0 0 0 4.5 4.2v1.3Z"/></svg></a>
     <a href="https://www.youtube.com/@harmonai" target="_blank" rel="noopener noreferrer" aria-label="Harmonia sur YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.1a3 3 0 0 0-2.1-2.2C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7.1 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.9 3 3 0 0 0 2.1 2.2c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.2 31 31 0 0 0 .5-4.9 31 31 0 0 0-.5-4.9ZM9.8 15.5v-7l6 3.5-6 3.5Z"/></svg></a>
   </div></div></div><div class="container footer-bottom"><span>© <span data-year>2026</span> Harmonia. Tous droits réservés.</span><span>Agir avec respect. Construire avec espoir.</span></div></footer>
+=======
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harmonia</title>
+  <style>
+    :root {
+      --bg: #f7f3ee;
+      --panel: #f2e9df;
+      --panel-strong: #e9dcc8;
+      --primary: #113d32;
+      --primary-soft: #dfeee7;
+      --text: #1f1f1f;
+      --muted: #5d5d5d;
+      --gold: #b9955d;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(17, 61, 50, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #f8f4f0 0%, #f3eee7 100%);
+      color: var(--text);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 28px 80px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 1.1rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #d9d9d9;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.13rem;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .nav-btn {
+      background: var(--primary);
+      color: var(--white);
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      letter-spacing: 0.12rem;
+      text-transform: uppercase;
+      box-shadow: 0 10px 25px rgba(17, 61, 50, 0.18);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      padding: 36px 0 28px;
+    }
+
+    .hero-copy {
+      background: rgba(255,255,255,0.2);
+      padding: 18px 10px 18px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.22rem;
+      font-size: 0.74rem;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 0.95;
+      color: var(--primary);
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .lead {
+      max-width: 560px;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.08rem;
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .primary-btn {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 14px 26px rgba(17, 61, 50, 0.18);
+    }
+
+    .secondary-btn {
+      background: rgba(17, 61, 50, 0.06);
+      color: var(--primary);
+    }
+
+    .primary-btn:hover,
+    .secondary-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-card {
+      width: min(100%, 460px);
+      background: linear-gradient(135deg, #ebe2d8 0%, #f5f0ea 100%);
+      padding: 18px;
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .image-card img {
+      width: 100%;
+      display: block;
+      border-radius: 26px;
+      object-fit: cover;
+      min-height: 460px;
+    }
+
+    .section {
+      margin-top: 38px;
+      padding: 28px 0;
+    }
+
+    .section-title {
+      color: var(--primary);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      margin-bottom: 18px;
+      line-height: 1.1;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #f7f0ea;
+      border-radius: 30px;
+      padding: 28px 22px;
+      box-shadow: 0 10px 24px rgba(17, 61, 50, 0.04);
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 1.55rem;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.98rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: #f3ebe1;
+      border-radius: 32px;
+      padding: 26px 24px;
+      box-shadow: 0 10px 20px rgba(17, 61, 50, 0.04);
+    }
+
+    .panel h3 {
+      font-size: 1.6rem;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .panel ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .panel li {
+      position: relative;
+      padding-left: 20px;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .panel li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 1.5rem;
+      line-height: 1;
+      top: 2px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      background: rgba(17, 61, 50, 0.04);
+      border-radius: 22px;
+      padding: 22px 18px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      color: var(--primary);
+      font-family: Georgia, 'Times New Roman', serif;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .cta-banner {
+      margin-top: 44px;
+      background: linear-gradient(135deg, var(--primary) 0%, #195244 100%);
+      color: var(--white);
+      border-radius: 30px;
+      padding: 32px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 16px 30px rgba(17, 61, 50, 0.14);
+    }
+
+    .cta-banner h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.8rem, 2.4vw, 2.5rem);
+      margin-bottom: 8px;
+    }
+
+    .cta-banner p {
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 20px 0 10px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+      letter-spacing: 0.08rem;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .split,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      nav {
+        gap: 12px 18px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .image-card img {
+        min-height: 340px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark"><img src="1.jpg" alt="Harmonia logo" /></div>
+        <span>HARMONIA</span>
+      </div>
+
+      <nav>
+        <a href="#">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="nav-btn">Réserver</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">Apaisement & médiation</div>
+          <h1>Apaisement & <span>Médiation</span><br />familiale</h1>
+          <p class="lead">
+            Nous accompagnons les familles dans des moments sensibles pour retrouver le calme,
+            rétablir le dialogue et construire des solutions durables avec respect, écoute et équilibre.
+          </p>
+
+          <div class="cta-row">
+            <a href="#contact" class="primary-btn">Nous contacter</a>
+            <a href="#about" class="secondary-btn">En savoir plus</a>
+          </div>
+        </div>
+
+        <div class="visual">
+          <div class="image-card">
+            <img src="1.jpg" alt="Harmonia family support" />
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <h2 class="section-title">Une présence rassurante au service de la famille</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">01</div>
+            <h3>Écoute</h3>
+            <p>Une première écoute attentive, bienveillante et sans jugement pour comprendre la situation et les besoins de chacun.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">02</div>
+            <h3>Clarté</h3>
+            <p>Un cadre structuré pour faire émerger les points de tension et identifier les solutions les plus adaptées.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">03</div>
+            <h3>Restauration</h3>
+            <p>Un accompagnement orienté vers la paix, la coopération et la protection de l’intérêt de l’enfant.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <h2 class="section-title">Nos domaines d’intervention</h2>
+        <div class="split">
+          <div class="panel">
+            <h3>Pour les familles</h3>
+            <ul>
+              <li>Médiation et arrangement familial</li>
+              <li>Dialogue parental et coparentalité</li>
+              <li>Accompagnement en période de séparation</li>
+              <li>Recherche de solutions pacifiques et durables</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3>Pour les situations complexes</h3>
+            <ul>
+              <li>Orientation et facilitation juridique</li>
+              <li>Référence vers les acteurs judiciaires utiles</li>
+              <li>Appui pour préserver les liens familiaux</li>
+              <li>Protection de l’intérêt de l’enfant</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Pourquoi choisir Harmonia ?</h2>
+        <div class="stats">
+          <div class="stat">
+            <strong>Calme</strong>
+            <span>Un cadre apaisé pour reprendre la parole</span>
+          </div>
+          <div class="stat">
+            <strong>Respect</strong>
+            <span>Un accompagnement fondé sur l’écoute et l’équité</span>
+          </div>
+          <div class="stat">
+            <strong>Climat</strong>
+            <span>Des solutions pensées pour l’avenir de la famille</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="cta-banner">
+        <div>
+          <h3>Un besoin d’accompagnement ?</h3>
+          <p>Contactez-nous pour parler de votre situation et envisager la meilleure voie de médiation.</p>
+        </div>
+        <a href="mailto:contact@harmonia.fr" class="primary-btn" style="background: white; color: var(--primary); box-shadow: none;">Contact</a>
+      </section>
+    </main>
+
+    <footer>Harmonia • Apaisement & médiation familiale</footer>
+  </div>
+>>>>>>> c704329dd2fd5f30a9733bed8e4e0a951c9595b2
 </body>
 </html>
